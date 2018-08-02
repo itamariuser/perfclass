@@ -1,4 +1,8 @@
-package a;
+package a;/*
+תתחילו באחד לא טריוויאלי, לדוגמא CC.ConnectedComponent.
+תבינו איפה החולשות שלו, מה המגבלות שלו,
+מה ה workloads שקשה לו להתמודד איתם - ותראו איך ניתן לשפר את אלו.
+ */
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -72,7 +76,7 @@ class Graph<E extends Comparable<E>> {
     }
 
     /**
-     * f.Main method used for counting the connected components. Iterates through
+     * Main method used for counting the connected components. Iterates through
      * the array of nodes to do a depth first search to get all nodes of the
      * graph from the actual node. These nodes are added to the array
      * markedNodes and will be ignored if they are chosen in the nodeList.
@@ -128,6 +132,7 @@ class Graph<E extends Comparable<E>> {
         return visited;
     }
 }
+
 
 
 public class ConnectedComponent {

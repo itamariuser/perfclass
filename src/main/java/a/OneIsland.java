@@ -1,9 +1,7 @@
 package a;
 
 import org.openjdk.jmh.annotations.*;
-
 import java.util.concurrent.TimeUnit;
-
 public class OneIsland {
 
     @State(Scope.Benchmark)
@@ -40,16 +38,16 @@ public class OneIsland {
 //        System.out.println("Do TearDown #" + i);
 //    }
 
-//DeepBenchmark.testtest  avgt    5  3643.870 ± 309.231  us/op
+    //DeepBenchmark.testtest  avgt    5  3643.870 ± 309.231  us/op
     @Benchmark
     @BenchmarkMode(Mode.AverageTime)
     @OutputTimeUnit(TimeUnit.MICROSECONDS)
-    public void testtest(GraphState graphState) {
-        // CC.f.Graph 1
+    public static String testtest(GraphState graphState) {
+        // CC.Graph 1
 
-//        CC.f.Graph graphInts = new CC.f.Graph();
+//        CC.Graph graphInts = new CC.Graph();
 //
-//        // CC.f.Graph 2
+//        // CC.Graph 2
 //        graphInts.addEdge(1, 2);
 //        graphInts.addEdge(2, 3);
 //        graphInts.addEdge(2, 4);
@@ -58,7 +56,7 @@ public class OneIsland {
 //        graphInts.addEdge(7, 8);
 //        graphInts.addEdge(8, 10);
 //        graphInts.addEdge(10, 8);
-        graphState.graphChars.countGraphs();
+        return ""+graphState.graphChars.countGraphs();
 //        System.out.println("Amount of different char-graphs: " + graphState.graphChars.countGraphs());
 //        System.out.println("Amount of different int-graphs: " + graphInts.countGraphs());
     }

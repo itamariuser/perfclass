@@ -1,9 +1,6 @@
 package a;
-
-import org.openjdk.jmh.annotations.*;
-
 import java.util.concurrent.TimeUnit;
-
+import org.openjdk.jmh.annotations.*;
 public class FourIsland {
 
 
@@ -13,7 +10,7 @@ public class FourIsland {
         public Graph graphChars = new Graph();
         public GraphState() {
             // add 3 independent node groups
-            long i = 1, k = i+(long)(Math.ceil(POD.nodesNum/4 - 1));
+            long i = 1, k = i+POD.nodesNum/4 - 1;
             for(int j = 0;j<4;++j)
             {
                 for (; i < k; ++i)
@@ -21,7 +18,7 @@ public class FourIsland {
                     graphChars.addEdge(i, i + 1);
                 }
                 ++i;
-                k = i + (long)(Math.ceil(POD.nodesNum/4 - 1));
+                k = i + POD.nodesNum/4 - 1;
             }
             System.out.println("4 ISLAND BENCHMARK");
             System.out.println("NODES: "+graphChars.nodeCount);
@@ -49,12 +46,12 @@ public class FourIsland {
     @Benchmark
     @BenchmarkMode(Mode.AverageTime)
     @OutputTimeUnit(TimeUnit.MICROSECONDS)
-    public void testtest(GraphState graphState) {
-        // CC.f.Graph 1
+    public static String testtest(GraphState graphState) {
+        // CC.Graph 1
 
-//        CC.f.Graph graphInts = new CC.f.Graph();
+//        CC.Graph graphInts = new CC.Graph();
 //
-//        // CC.f.Graph 2
+//        // CC.Graph 2
 //        graphInts.addEdge(1, 2);
 //        graphInts.addEdge(2, 3);
 //        graphInts.addEdge(2, 4);
@@ -63,7 +60,7 @@ public class FourIsland {
 //        graphInts.addEdge(7, 8);
 //        graphInts.addEdge(8, 10);
 //        graphInts.addEdge(10, 8);
-        graphState.graphChars.countGraphs();
+        return ""+graphState.graphChars.countGraphs();
 //        System.out.println("Amount of different char-graphs: " + graphState.graphChars.countGraphs());
 //        System.out.println("Amount of different int-graphs: " + graphInts.countGraphs());
     }

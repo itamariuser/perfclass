@@ -1,9 +1,7 @@
 package a;
 
 import org.openjdk.jmh.annotations.*;
-
 import java.util.concurrent.TimeUnit;
-
 public class ThreeIsland {
 
 
@@ -36,7 +34,7 @@ public class ThreeIsland {
 //            graphChars.addEdge('a', 'w');
         }
     }
-//    @Setup(Level.Trial)
+    //    @Setup(Level.Trial)
 //    public void doSetup() {
 //        public static int i = 0;
 //        System.out.println("Do Setup #" + i);
@@ -49,12 +47,12 @@ public class ThreeIsland {
     @Benchmark
     @BenchmarkMode(Mode.AverageTime)
     @OutputTimeUnit(TimeUnit.MICROSECONDS)
-    public void testtest(GraphState graphState) {
-        // CC.f.Graph 1
+    public static String testtest(GraphState graphState) {
+        // CC.Graph 1
 
-//        CC.f.Graph graphInts = new CC.f.Graph();
+//        CC.Graph graphInts = new CC.Graph();
 //
-//        // CC.f.Graph 2
+//        // CC.Graph 2
 //        graphInts.addEdge(1, 2);
 //        graphInts.addEdge(2, 3);
 //        graphInts.addEdge(2, 4);
@@ -63,7 +61,7 @@ public class ThreeIsland {
 //        graphInts.addEdge(7, 8);
 //        graphInts.addEdge(8, 10);
 //        graphInts.addEdge(10, 8);
-        graphState.graphChars.countGraphs();
+        return ""+graphState.graphChars.countGraphs();
 //        System.out.println("Amount of different char-graphs: " + graphState.graphChars.countGraphs());
 //        System.out.println("Amount of different int-graphs: " + graphInts.countGraphs());
     }
