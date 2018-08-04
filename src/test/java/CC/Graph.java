@@ -97,7 +97,7 @@ public class Graph<E extends Comparable<E>> {
      *
      * @param visited
      *            A list of already visited nodes in the depth first search
-     * /
+     * 
      * @return returns a set of visited nodes
      *
      */
