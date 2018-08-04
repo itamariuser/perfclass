@@ -23,7 +23,11 @@ public class Main{
 
     public static void test1() throws Exception
     {
-        OneIsland.GraphState z  = new OneIsland.GraphState();
-        System.out.println(z.hashCode());
+        Graph graphChars = new Graph();
+        for(int i = 0; i < POD.nodesNum-1; ++i)
+        {
+            graphChars.addEdge(1, i);
+        }
+        System.out.println(graphChars.countGraphs());
     }
 }
