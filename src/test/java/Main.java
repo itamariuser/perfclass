@@ -1,4 +1,6 @@
+import CC.Graph;
 import CC.OneIsland;
+import CC.POD;
 
 public class Main{
     public static void main(String[] args) {
@@ -22,7 +24,12 @@ public class Main{
 
     public static void test1() throws Exception
     {
-        OneIsland.GraphState z  = new OneIsland.GraphState();
-        System.out.println(z.hashCode());
+        Graph graphChars = new Graph();
+        // add 1 continous node group
+        for(int i = 0; i < POD.nodesNum-1; ++i)
+        {
+            graphChars.addEdge(1, i);
+        }
+        graphChars.countGraphs();
     }
 }
